@@ -1,0 +1,8 @@
+.mdc-list-item.mdc-list-item--with-three-lines .mdc-list-item__start {
+  align-self: center!important;
+  margin-top: 16px;
+}
+
+.courser{
+  cursor: pointer;
+}

@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <my-tabs>
+      <my-tab [tabTitle]="'User Profile'">
+        <div class="user-info">
+          <h3>Email: {{ selectedUser?.email }}</h3>
+          <h3>Name: {{ selectedUser?.name }}</h3>
+          <h3>Phone: {{ selectedUser?.phone }}</h3>
+        </div>
+      </my-tab>
+      <my-tab tabTitle="History">
+        <ul>
+          <li *ngFor="let item of historyItems">{{ item }}</li>
+        </ul>
+      </my-tab>
+    </my-tabs>
+  </div>
+</nav>

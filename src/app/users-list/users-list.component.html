@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-title class="text-center">Add Task</mat-card-title>
+  <mat-card-content>
+    <button mat-raised-button color="primary" (click)="openAddUserDialog(null)">Add User</button>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-content>
+    <mat-form-field>
+      <input matInput placeholder="Search by email" (keyup)="onSearch()" [formControl]="searchFormControl">
+    </mat-form-field>
+
+    <mat-list>
+      <div mat-subheader>Users List</div>
+      <mat-list-item *ngFor="let user of users$ | async" style="height: 100px">
+        <mat-icon matListItemIcon>account_circle</mat-icon>
+        <span (click)="openTabs(user.id)" class="courser">
+          <div matListItemTitle>{{ user.name }}</div>
+          <div matListItemLine>{{ user.email }}</div>
+        </span>
+        <mat-icon color="primary" (click)="openAddUserDialog(user)">edit</mat-icon>
+        <mat-icon color="warn" (click)="deleteUser(user.id)">delete_forever</mat-icon>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
